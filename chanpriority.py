@@ -11,7 +11,7 @@ High-priority channels must be set using this command:
     /chanpriority [#channels]+
 
 The argument must be a list of channels separated by commas, e.g.:
-    /chanpriority #chan1,#chan2,#chan3
+    /chanpriority #chan1, #chan2, #chan3
 
 LICENSE:
 
@@ -56,10 +56,12 @@ def set_whitelist(data, option, value):
     """
     chanlist = ""
 
-    t = value.split(",")
+    t = value.replace(' ', '').split(",")
     for chan in t:
         if 2 <= len(chan) and "#" == chan[0]:
             chanlist = chanlist + chan + ","
+
+    chanlist=chanlist[:-1] #remove the trailing comma
 
     weechat.config_set_plugin("whitelist", chanlist)
     weechat.prnt("", "whitelist set to: '{0}'".format(chanlist))
@@ -114,7 +116,7 @@ High-priority channels must be set using this command:
     /chanpriority [#channels]+
 
 The argument must be a list of channels separated by commas, e.g.:
-    /chanpriority #chan1,#chan2,#chan3
+    /chanpriority #chan1, #chan2, #chan3
 
 LICENSE: GPL v3
 
