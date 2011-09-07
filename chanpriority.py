@@ -40,6 +40,21 @@ SCRIPT_DESC = "Allows you to set high-priority channels, see /help chanpriority"
 
 whitelist = []
 
+def reorder_buffers():
+    """Reorders the buffers once the whitelist has changed
+    """
+
+    count = 2
+
+    #the current buffer should be set after the name, not after the number
+    for chan in whitelist:
+        buff = weechat.buffer_search("irc", 'freenode.' + chan)
+        if buff:
+            weechat.buffer_set(buff, "number", str(count))
+            count += 1
+
+    return weechat.WEECHAT_RC_OK
+
 def get_whitelist(data, option, value):
     """Assign the config values of the whitelist option to the whitelist global
     """
@@ -48,6 +63,8 @@ def get_whitelist(data, option, value):
 
     t = weechat.config_get_plugin("whitelist")
     whitelist = t.split(",")
+
+    reorder_buffers()
 
     return weechat.WEECHAT_RC_OK
 
@@ -64,7 +81,7 @@ def set_whitelist(data, option, value):
     chanlist=chanlist[:-1] #remove the trailing comma
 
     weechat.config_set_plugin("whitelist", chanlist)
-    weechat.prnt("", "whitelist set to: '{0}'".format(chanlist))
+    weechat.prnt("", "Chanpriority list set to: '{0}'".format(chanlist))
 
     return weechat.WEECHAT_RC_OK
 
