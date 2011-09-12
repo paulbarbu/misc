@@ -117,8 +117,6 @@ def on_join(data, signal, signal_data):
 
     (chan, network, buffer) = join_meta(data, signal, signal_data)
 
-    weechat.prnt("", "Chan: {0}\r\nNet: {1}\r\n".format(chan, network))
-
     if network + "." + chan in whitelist or chan in whitelist:
         weechat.buffer_set(buffer, "number", "2")
 
