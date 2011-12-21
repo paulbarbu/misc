@@ -129,7 +129,7 @@ def join_meta(data, signal, signal_data):
     that will be opened after joining
     """
 
-    chan = signal_data.rpartition(":")[-1]
+    chan = signal_data[signal_data.find("#"):]
     network = signal.partition(",")[0]
     buffer = weechat.buffer_search("irc", network + "." + chan)
 
