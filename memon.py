@@ -105,4 +105,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """, '[on|off]',
 """on - you get notifications on new memos
 off - plugin disabled
-""", '', 'switch', '')
+""", 'on|off', 'switch', '')
