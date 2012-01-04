@@ -38,7 +38,7 @@ import weechat
 
 SCRIPT_COMMAND = "chanpriority"
 SCRIPT_AUTHOR = "Barbu Paul - Gh. <paullik.paul@gmail.com>"
-SCRIPT_VERSION = "0.4"
+SCRIPT_VERSION = "0.5"
 SCRIPT_NAME = "chanpriority"
 SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC = "Allows you to set high-priority channels, see /help chanpriority"
