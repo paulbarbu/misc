@@ -26,7 +26,7 @@ import weechat, subprocess, re
 
 SCRIPT_COMMAND = 'memon'
 SCRIPT_AUTHOR = 'Paul Barbu - Gheorghe <paullik.paul@gmail.com>'
-SCRIPT_VERSION = '0.2'
+SCRIPT_VERSION = '0.3'
 SCRIPT_LICENSE = 'GPL3'
 SCRIPT_DESC = 'Freenode memo notifications, see /help memon'
 
