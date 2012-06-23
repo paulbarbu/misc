@@ -42,4 +42,4 @@ if __name__ == '__main__':
     if len(sys.argv) == 4:
         main(sys.argv[1], sys.argv[2], sys.argv[3])
     else:
-        print 'Please provide the path where you want your notes saved'
+        print 'Please provide the path where you want your notes saved as well as the user name and dropbox password!'
